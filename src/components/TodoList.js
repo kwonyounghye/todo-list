@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+// import { useCallback } from 'react'
 
 // const TodoListItem = ({todo}) => {
 //     const {text, checked} = todo;
@@ -7,19 +7,17 @@ import { useCallback } from "react";
 //     )
 // }
 
-    
-    const TodoList = ({add, onRemove, onEdit}) => {
-    
-    return (
-        <ol>
-            {add.map((list, id) => (
-            <li key={id}>{list}
-            
-            <button onClick={() => onRemove(id)}>DELETE</button>
-            <button onClick={() => onEdit(id)}>EDIT</button>
-            </li>
-            ))}
-        </ol>
-    )
+const TodoList = ({ add, handleRemove, handleEdit }) => {
+  return (
+    <ol>
+      {add.map((list, id) => (
+        <li key={id}>
+          {list}
+          <button onClick={() => handleRemove(id)}>DELETE</button>
+          <button onClick={() => handleEdit(id)}>EDIT</button>
+        </li>
+      ))}
+    </ol>
+  )
 }
-export default TodoList;
+export default TodoList
