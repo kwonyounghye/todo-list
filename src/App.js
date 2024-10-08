@@ -19,6 +19,7 @@ const List = () => {
       // submit 이벤트는 브라우저 새로고침 발생시킴
       e.preventDefault()
     },
+    
     [input]
   )
 
