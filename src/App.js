@@ -19,14 +19,14 @@ const List = () => {
       // submit 이벤트는 브라우저 새로고침 발생시킴
       e.preventDefault()
     },
-    
+
     [input]
   )
 
   const handleRemove = useCallback(
     (id) => {
       // item:현재 요소, index: 현재 요소의 위치 / item, index, id의 관계?
-      setAdd(add.filter((item, index) => index !== id)) // id가 고유값인데 index가 왜 필요한 것인지?: filter 메서드를 통하여 새로운 배열을 만들었기에 새로운 변수가 필요함, id는 각 항목의 고유한 식별자이고 index는 전체에서의 인덱스이다. / item은 왜 읽히지 않으면서 있어야하는건지?: filter 메서드의 콜백함수가 두 개의 매개변수를 받기 때문에 포함
+      setAdd((list) => list.filter((item, index) => index !== id)) // id가 고유값인데 index가 왜 필요한 것인지?: filter 메서드를 통하여 새로운 배열을 만들었기에 새로운 변수가 필요함, id는 각 항목의 고유한 식별자이고 index는 전체에서의 인덱스이다. / item은 왜 읽히지 않으면서 있어야하는건지?: filter 메서드의 콜백함수가 두 개의 매개변수를 받기 때문에 포함
     },
     [add] // useCallback은 [add]값이 변경될 때만 새로운 함수 생성
   )
