@@ -1,19 +1,12 @@
-// import { useCallback } from 'react'
-
-
-// const TodoListItem = ({todo}) => {
-//     const {text, checked} = todo;
-//     return (
-//         <div></div>
-//     )
-// }
+import '../App.js'
+import PropTypes from 'prop-types'
 
 const TodoList = ({ add, handleRemove, handleEdit }) => {
   return (
     <ol>
-      {add.map((list, id) => (
+      {add.map((items, id) => (
         <li key={id}>
-          {list}
+          {items}
           <button onClick={() => handleRemove(id)}>DELETE</button>
           <button onClick={() => handleEdit(id)}>EDIT</button>
         </li>
@@ -21,4 +14,11 @@ const TodoList = ({ add, handleRemove, handleEdit }) => {
     </ol>
   )
 }
+
+TodoList.propTypes = {
+  add: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  handleEdit: PropTypes.func.isRequired,
+}
+
 export default TodoList
